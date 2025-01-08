@@ -1,10 +1,11 @@
 import React from "react";
 import Logo from "../../assets/App-logo.png";
 import Link from "./Link/Link";
+import Button from "./Button/Button";
 
 const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src={Logo} alt="logo-app" className="w-50" />
@@ -33,9 +34,7 @@ const Navbar = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
+            <Button label={'Search'}/>
           </form>
         </div>
       </div>
