@@ -1,11 +1,12 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
-const Link = ({title}) => {
+const Link = ({title, url}) => {
   return (
     <li className="nav-item">
-      <a className="nav-link active text-white" aria-current="page" href="#">
-        {title} 
-      </a>
+      <RouterLink to={url} className="nav-link active text-white">
+        {title}
+      </RouterLink>
     </li>
   );
 };
