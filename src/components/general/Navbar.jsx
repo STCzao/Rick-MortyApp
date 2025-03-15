@@ -23,9 +23,9 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <Link title={"Home"}/>
-            <Link title={"Characters"}/>
-            <Link title={"Episodes"}/>
+            <Link title={"Home"} url={"/"}/>
+            <Link title={"Characters"} url={"/"}/>
+            <Link title={"Episodes"} url={"/"}/>
           </ul>
           <form className="d-flex" role="search">
             <input
