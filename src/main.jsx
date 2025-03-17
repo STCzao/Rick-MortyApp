@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 
+//Se encarga de contoner el App
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
