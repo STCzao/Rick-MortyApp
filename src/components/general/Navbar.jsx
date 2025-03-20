@@ -3,7 +3,8 @@ import Logo from "../../assets/App-logo.png";
 import Link from "./Link/Link";
 import Button from "./Button/Button";
 
-const Navbar = () => {
+const Navbar = ({setCharacterName}) => {
+
   return (
     <nav className="navbar navbar-expand-lg bg-dark">
       <div className="container-fluid">
@@ -33,8 +34,8 @@ const Navbar = () => {
               type="search"
               placeholder="Search"
               aria-label="Search"
-            />
-            <Button label={"Search"} />
+            onChange={(event) => {setCharacterName(event.target.value)}}/> 
+            <Button label={"Search"} /> 
           </form>
         </div>
       </div>
