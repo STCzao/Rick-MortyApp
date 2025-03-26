@@ -12,7 +12,6 @@ const Home = ({ characterName }) => {
   const [isLoading, setIsLoading] = useState(false);//Lo utilizo para cargar las cards segun la interaccion del usuario
 
   const handleRequest = async () => {
-    setIsLoading(true);
     try {
       const {
         data: {
@@ -32,7 +31,16 @@ const Home = ({ characterName }) => {
 
 
   useEffect(() => {
-    handleRequest(); //Se ejecuta y monta el componente cuando esta cargado
+
+    setIsLoading(true); //Cuando se monte el useEffect, setIsLoading se coloca en true y el SetTimeOut ejecuta el HandleRequest despues de cierto tiempo
+
+    const searchInterval = setTimeout(() => { 
+      handleRequest(); //Se ejecuta y monta el componente cuando esta cargado
+    },1000);
+
+    return () => {
+      clearInterval(searchInterval); //Una vez que dejo de escribir caracteres, limpiamos el intervalo de SetTimeOut para que el HandleRequest se ejecute
+    }
   }, [currentPage, characterName]); //Cuando currentpage/charactername cambia el valor, se ejecuta y actualiza el handle request
 
   const createCard = () =>
