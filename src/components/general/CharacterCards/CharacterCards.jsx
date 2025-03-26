@@ -9,7 +9,7 @@ const CharacterCards = ({
   const navigate = useNavigate();
 
   return (
-    //Utilice la funcion onClick para que useNavigate, nos direccione a character y luego al ID de cada card.
+    //Utilice la funcion onClick para que useNavigate nos direccione a character y luego al ID de cada card.
     <div
       className={`card col-12 col-lg-${col} bg-dark pt-2`}
       onClick={() => navigate(`/character/${id}`)}
