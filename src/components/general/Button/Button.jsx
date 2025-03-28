@@ -1,9 +1,10 @@
 import React from "react";
 
-const Button = ({label}) => {
+const Button = ({ label }) => {
   return (
     <button className="btn btn-outline-danger" type="submit">
-      {label}
+      {" "}
+      {label}{" "}
     </button>
   );
 };
