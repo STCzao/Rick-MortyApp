@@ -27,6 +27,7 @@ const Navbar = ({setCharacterName, isSearching, setIsSearching}) => {
             <Link title={"Home"} url={"/"} />
             <Link title={"Characters"} url={"/"} />
             <Link title={"Episodes"} url={"/"} />
+            <Link title={"Register"} url={"/register"} />
           </ul>
           <form className="d-flex" role="search">
             <input
