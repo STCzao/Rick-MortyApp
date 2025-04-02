@@ -3,6 +3,8 @@ import Navbar from "./components/general/Navbar";
 import Home from "./pages/Home";
 import CharacterDetail from "./pages/CharacterDetail";
 import React, { useState } from "react";
+import Register from "./pages/Register";
+import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
 
@@ -17,6 +19,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home characterName={characterName}/>} />
         <Route path="/character/:id" element={<CharacterDetail />} />
+        <Route path="/register" element={<Register />}/>
+        <Route path="*" element={<ErrorPage />}/>
+        
       </Routes>
     </BrowserRouter>
   );
