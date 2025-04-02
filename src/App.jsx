@@ -13,7 +13,7 @@ const App = () => {
     //Utilizamos el hook de estado para setCharacterName y cada vez que se cambia el valor en el componente Navbar, lo guardamos aca
     //Pasamos la prop a Home, la desestructuramos y la agregamos a la peticion Http que se va a ejecutar cuando el useEffect monte el componente
     <BrowserRouter> 
-      <Navbar setCharacterName={setCharacterName}/> 
+      <Navbar setCharacterName={setCharacterName} /> 
       <Routes>
         <Route path="/" element={<Home characterName={characterName}/>} />
         <Route path="/character/:id" element={<CharacterDetail />} />

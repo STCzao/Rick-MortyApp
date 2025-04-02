@@ -3,7 +3,7 @@ import Logo from "../../assets/App-logo.png";
 import Link from "./Link/Link";
 import Button from "./Button/Button";
 
-const Navbar = ({setCharacterName}) => {
+const Navbar = ({setCharacterName, isSearching, setIsSearching}) => {
 
   return (
     <nav className="navbar navbar-expand-lg bg-dark">
@@ -34,13 +34,13 @@ const Navbar = ({setCharacterName}) => {
               type="search"
               placeholder="Search"
               aria-label="Search"
-            onChange={(event) => {setCharacterName(event.target.value)}}/> 
-            <Button label={"Search"} /> 
+            onChange={(event) => {setCharacterName(event.target.value)}}/>
           </form>
         </div>
       </div>
     </nav>
   );
 };
+
 
 export default Navbar;
