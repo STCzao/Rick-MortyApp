@@ -3,7 +3,13 @@ import { preconnect } from "react-dom";
 
 const Register = () => {
 
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    name: "",
+    lastName: "",
+    email: "",
+    pass: "",
+    repeatPass: "",
+  });
   const [btnDisabled, setBtnDisabled] = useState(false)
   const handleChange = (event) => {
     const {id, value} = event.target; 
@@ -23,12 +29,19 @@ const Register = () => {
     }
     handleValidations();
   }, [user])
+
+  const handleStoragaeUser = (event) => {
+    event.prevent.default();
+
+    localStorgae.setItem("user", JOIN.stringify(user))
+  }
   
 
   //Cuando se dispara el evento OnChange en cualquier input, ejecutamos la funcion HandleChange
   //La constante de handleChange a utilizamos para desestructurar event, luego ingresamos a target y buscamos los valores de ID y Value
   //Incorporamos el Spread Operator para traer los valores previos que almacenados en el string y guardarlos en vez de sobrescribirlos. El ID almacena el valor que paso el usuario
   //En vez de onChange, utilizaremos onBlur. Con onChange el valor cambia por cada caracter ingresado al input y con onBlur cambia solo cuando le quitamos el foco al input
+
   return (
     <div className="container">
       <div className="row pt-5 justify-content-center">
