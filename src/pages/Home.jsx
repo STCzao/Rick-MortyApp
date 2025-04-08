@@ -42,12 +42,21 @@ const Home = ({ characterName }) => {
       clearInterval(searchInterval); //Una vez que dejo de escribir caracteres, limpiamos el intervalo de SetTimeOut para que el HandleRequest se ejecute
     };
   }, [currentPage, characterName]); //Cuando currentpage/charactername cambia el valor, se ejecuta y actualiza el handle request
- 
+
   const createCard = () => {
-    return characters.length > 0 ? characters.map ((character) => <CharacterCards key={character.id} character={character} col={3}/>) : <h1 className="text-center"> No se encontraron resultados para su busqueda</h1>
+    return characters.length > 0 ? (
+      characters.map((character) => (
+        <CharacterCards key={character.id} character={character} col={2} />
+      ))
+    ) : (
+      <h1 className="text-center">
+        {" "}
+        No se encontraron resultados para su busqueda
+      </h1>
+    );
   };
-    //El map ingresa al string de characters. Luego, cada card es una posicion del string y esta determinado por un Id, para traer sus caracteristicas hay que pasarle una key que busque ID dentro de Character
-    //Si hay caracteres por leer, se ejecuta el characters map. Si no encuentra resultado, devuelve el H1
+  //El map ingresa al string de characters. Luego, cada card es una posicion del string y esta determinado por un Id, para traer sus caracteristicas hay que pasarle una key que busque ID dentro de Character
+  //Si hay caracteres por leer, se ejecuta el characters map. Si no encuentra resultado, devuelve el H1
   const handlePageClick = (selectedPage) => setCurrentPage(selectedPage + 1);
 
   return (

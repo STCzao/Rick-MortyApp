@@ -14,7 +14,7 @@ const CharacterCards = ({
     //Utilice la funcion onClick para que useNavigate nos direccione a character y luego al ID de cada card.
     //La hoja de estilo agregada es para cambiar el cursor
     <div
-      className={`card col-12 col-lg-${col} bg-dark pt-2 ${characterCard}`}
+      className={`card col-11 col-md-5 col-lg-${col} bg-dark pt-2 ${characterCard}`}
       onClick={() => navigate(`/character/${id}`)}
     >
       <img src={image} className="card-img-top" alt={name} />

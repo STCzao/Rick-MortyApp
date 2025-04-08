@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { preconnect } from "react-dom";
 
 const Register = () => {
-
   const [user, setUser] = useState({
     name: "",
     lastName: "",
@@ -10,32 +9,31 @@ const Register = () => {
     pass: "",
     repeatPass: "",
   });
-  const [btnDisabled, setBtnDisabled] = useState(false)
+  const [btnDisabled, setBtnDisabled] = useState(false);
   const handleChange = (event) => {
-    const {id, value} = event.target; 
+    const { id, value } = event.target;
     setUser((prevState) => ({
       ...prevState,
-      [id] : value
+      [id]: value,
     }));
   };
-  
+
   useEffect(() => {
     const handleValidations = () => {
-      if(!user.name || user?.name?.length === 0) {
-        setBtnDisabled(true)
+      if (!user.name || user?.name?.length === 0) {
+        setBtnDisabled(true);
       } else {
-        setBtnDisabled(false)
+        setBtnDisabled(false);
       }
-    }
+    };
     handleValidations();
-  }, [user])
+  }, [user]);
 
   const handleStoragaeUser = (event) => {
     event.prevent.default();
 
-    localStorgae.setItem("user", JOIN.stringify(user))
-  }
-  
+    localStorgae.setItem("user", JOIN.stringify(user));
+  };
 
   //Cuando se dispara el evento OnChange en cualquier input, ejecutamos la funcion HandleChange
   //La constante de handleChange a utilizamos para desestructurar event, luego ingresamos a target y buscamos los valores de ID y Value
@@ -55,7 +53,7 @@ const Register = () => {
               className="form-control"
               id="name"
               onBlur={handleChange}
-            /> 
+            />
             <label htmlFor="lastName" className="form-label">
               Lastname
             </label>
@@ -97,7 +95,11 @@ const Register = () => {
               onBlur={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100" disabled={btnDisabled}>
+          <button
+            type="submit"
+            className="btn btn-primary w-100"
+            disabled={btnDisabled}
+          >
             Submit
           </button>
         </form>
